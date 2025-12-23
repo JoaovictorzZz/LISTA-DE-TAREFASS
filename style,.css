@@ -1,0 +1,154 @@
+
+/*chave geral*/
+*{
+  background-color: #f4f4f9;
+}
+/* Fonte e fundo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: auto;
+  padding: 20px;
+  width: 600px;
+  text-align: center;
+  color: #333;
+}
+
+/* Título */
+h2 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 40px auto;
+  width: fit-content;
+  background: linear-gradient(90deg, #cccccc, #fd4f83);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  animation: fadeInUp 1s ease forwards;
+}
+div{
+  height: 200px;
+  color: transparent;
+}
+h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, #ffffff, #ff0080);
+  border-radius: 2px;
+  animation: expandLine 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Área de input */
+section {
+  margin-bottom: 25px;
+}
+
+input {
+  padding: 10px;
+  width: 220px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #b7b8b8;
+}
+
+/* Botão adicionar */
+#botao {
+  padding: 10px 18px;
+  margin-left: 10px;
+  background: linear-gradient(135deg, #f34b4b, #f84077);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#botao:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f50606, #fa1951);
+}
+
+/* Lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin: 10px auto;
+  padding: 12px 15px;
+  width: 320px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: translateY(-3px);
+}
+
+/* Texto da tarefa */
+li span {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+li span:hover {
+  color: #007bff;
+}
+
+/* Botão remover */
+button.remover {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button.remover:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #cc1f3a, #e63946);
+}
