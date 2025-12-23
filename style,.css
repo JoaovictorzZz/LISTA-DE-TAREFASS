@@ -1,15 +1,16 @@
-
-/*chave geral*/
-*{
+/* Chave geral */
+* {
   background-color: #f4f4f9;
+  box-sizing: border-box;
 }
+
 /* Fonte e fundo */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
-  width: 600px;
+  max-width: 900px; /* limite para desktop */
   text-align: center;
   color: #333;
 }
@@ -30,10 +31,7 @@ h2 {
   position: relative;
   animation: fadeInUp 1s ease forwards;
 }
-div{
-  height: 200px;
-  color: transparent;
-}
+
 h2::after {
   content: '';
   display: block;
@@ -42,26 +40,6 @@ h2::after {
   background: linear-gradient(90deg, #ffffff, #ff0080);
   border-radius: 2px;
   animation: expandLine 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes expandLine {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 /* Área de input */
@@ -151,4 +129,43 @@ button.remover {
 button.remover:hover {
   transform: scale(1.1);
   background: linear-gradient(135deg, #cc1f3a, #e63946);
+}
+
+/* ========================= */
+/* RESPONSIVIDADE MOBILE     */
+/* ========================= */
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin: 20px auto;
+  }
+
+  input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  #botao {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  li {
+    width: 95%;
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  button.remover {
+    align-self: flex-end;
+  }
 }
